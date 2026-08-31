@@ -19,10 +19,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create Docker tag from branch + commit message
+      - name: Create Docker tag from commit message
         id: tag
         run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')
           COMMIT_MESSAGE=$(git log -1 --pretty=%s)
 
           # Convert to lowercase
@@ -37,24 +36,21 @@ jobs:
           # Remove leading/trailing -
           TAG=$(echo "$TAG" | sed 's/^-//;s/-$//')
 
-          # Limit length to 80 characters (leave room for branch prefix)
-          TAG=$(echo "$TAG" | cut -c1-80)
+          # Limit length to 100 characters
+          TAG=$(echo "$TAG" | cut -c1-100)
 
           # Fallback if tag becomes empty
           if [ -z "$TAG" ]; then
             TAG="build-${GITHUB_SHA::7}"
           fi
 
-          # Prefix with branch name to avoid collisions across branches
-          FULL_TAG="${BRANCH_NAME}-${TAG}"
-
           # Build final tag list: always the commit tag; add "latest" only on main
-          TAGS="${IMAGE_NAME}:${FULL_TAG}"
+          TAGS="${IMAGE_NAME}:${TAG}"
           if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
             TAGS="${TAGS}$(printf '\n')${IMAGE_NAME}:latest"
           fi
 
-          echo "Docker tag: $FULL_TAG"
+          echo "Docker tag: $TAG"
           echo "TAGS<<EOF" >> "$GITHUB_OUTPUT"
           echo "$TAGS" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
