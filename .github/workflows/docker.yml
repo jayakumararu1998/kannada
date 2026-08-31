@@ -51,8 +51,7 @@ jobs:
           # Build final tag list: always the commit tag; add "latest" only on main
           TAGS="${IMAGE_NAME}:${FULL_TAG}"
           if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
-            TAGS="${TAGS}
-${IMAGE_NAME}:latest"
+            TAGS="${TAGS}$(printf '\n')${IMAGE_NAME}:latest"
           fi
 
           echo "Docker tag: $FULL_TAG"
