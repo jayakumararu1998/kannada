@@ -23,7 +23,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # Build with standalone output for optimized production bundle
 RUN npm run build
 
-RUN mkdir -p public/dinamani/_next && cp -r .next/static public/dinamani/_next/static
+RUN mkdir -p public/kannada/_next && cp -r .next/static public/kannada/_next/static
 
 # Create build info
 RUN mkdir -p /app/public && \
