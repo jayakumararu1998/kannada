@@ -1,0 +1,17 @@
+{
+  "name": "ಕನ್ನಡಪ್ರಭ — Kannada Prabha",
+  "short_name": "ಕನ್ನಡಪ್ರಭ",
+  "description": "ಕನ್ನಡ ಸುದ್ದಿ ಜಾಲತಾಣ",
+  "lang": "kn",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

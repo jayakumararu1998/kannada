@@ -1,0 +1,3416 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode (Tailwind v4 syntax) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-on-accent: #ffffff;
+  --color-border-inverse: #ffffff;
+  --color-000000: #000000;
+  --color-009EF9: #009ef9;
+  --color-111111: #111111;
+  --color-1E1E1E: #1e1e1e;
+  --color-276AAA: #276aaa;
+  --color-3046EB: #3046eb;
+  --color-333333: #333333;
+  --color-3742B8: #3742b8;
+  --color-4A4A4A: #4a4a4a;
+  --color-4F4F4F: #4f4f4f;
+  --color-6D6D6D: #6d6d6d;
+  --color-6F6F6F: #6f6f6f;
+  --color-757575: #757575;
+  --color-808080: #808080;
+  --color-8B95A5: #8b95a5;
+  --color-D1D1D1: #d1d1d1;
+  --color-D2D2D2: #d2d2d2;
+  --color-DFDFDF: #dfdfdf;
+  --color-E8E8E8: #e8e8e8;
+  --color-F3F4F6: #f3f4f6;
+  --color-F4F1F6: #f4f1f6;
+  --color-F7F1DE: #f7f1de;
+  --color-F9F9F9: #f9f9f9;
+  --color-panel: #f9f9f9;
+  --color-FCF8F8: #fcf8f8;
+  --color-FFF6DE: #fff6de;
+  --color-FBEFEF: #fbefef;
+  --color-F2F7FF: #f2f7ff;
+  --color-FACC15: #facc15;
+  --color-FFFFFF: #ffffff;
+  --color-0D156C: #0d156c;
+  --color-183354: #183354;
+  --font-manrope: var(--font-manrope);
+  --font-inter: var(--font-inter);
+  --font-baloo-tamma-2: var(--font-baloo-tamma-2);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #090d16;
+  --foreground: #f1f5f9;
+  --color-on-accent: #ffffff;
+  --color-border-inverse: rgba(255, 255, 255, 0.88);
+  --color-000000: #f8fafc;
+  --color-111111: #f1f5f9;
+  --color-1E1E1E: #e5edf6;
+  --color-276AAA: #69a8ef;
+  --color-3046EB: #5f78ff;
+  --color-333333: #d7dee8;
+  --color-3742B8: #8292ff;
+  --color-4A4A4A: #c8d2df;
+  --color-4F4F4F: #c4cedb;
+  --color-6D6D6D: #9aa8bb;
+  --color-6F6F6F: #9aa8bb;
+  --color-757575: #94a3b8;
+  --color-808080: #94a3b8;
+  --color-8B95A5: #a6b2c3;
+  --color-D1D1D1: #334155;
+  --color-D2D2D2: #334155;
+  --color-DFDFDF: #263447;
+  --color-E8E8E8: #1e293b;
+  --color-F3F4F6: #1a2333;
+  --color-F4F1F6: #182235;
+  --color-F7F1DE: #2b2415;
+  --color-F9F9F9: #111827;
+  --color-panel: #1f1f1f;
+  --color-FCF8F8: #151e2c;
+  --color-FFF6DE: #2d2515;
+  --color-FBEFEF: #2a1c20;
+  --color-F2F7FF: #101d30;
+  --color-FACC15: #facc15;
+  --color-FFFFFF: #0f172a;
+  --color-0D156C: #5268ff;
+  --color-183354: #255f91;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-000000: var(--color-000000);
+  --color-009EF9: var(--color-009EF9);
+  --color-111111: var(--color-111111);
+  --color-1E1E1E: var(--color-1E1E1E);
+  --color-276AAA: var(--color-276AAA);
+  --color-3046EB: var(--color-3046EB);
+  --color-333333: var(--color-333333);
+  --color-3742B8: var(--color-3742B8);
+  --color-4A4A4A: var(--color-4A4A4A);
+  --color-4F4F4F: var(--color-4F4F4F);
+  --color-6D6D6D: var(--color-6D6D6D);
+  --color-6F6F6F: var(--color-6F6F6F);
+  --color-757575: var(--color-757575);
+  --color-808080: var(--color-808080);
+  --color-8B95A5: var(--color-8B95A5);
+  --color-D1D1D1: var(--color-D1D1D1);
+  --color-D2D2D2: var(--color-D2D2D2);
+  --color-DFDFDF: var(--color-DFDFDF);
+  --color-E8E8E8: var(--color-E8E8E8);
+  --color-F3F4F6: var(--color-F3F4F6);
+  --color-F4F1F6: var(--color-F4F1F6);
+  --color-F7F1DE: var(--color-F7F1DE);
+  --color-F9F9F9: var(--color-F9F9F9);
+  --color-panel: var(--color-panel);
+  --color-FCF8F8: var(--color-FCF8F8);
+  --color-FFF6DE: var(--color-FFF6DE);
+  --color-FBEFEF: var(--color-FBEFEF);
+  --color-F2F7FF: var(--color-F2F7FF);
+  --color-FACC15: var(--color-FACC15);
+  --color-FFFFFF: var(--color-FFFFFF);
+  --color-0D156C: var(--color-0D156C);
+  --color-183354: var(--color-183354);
+  --font-kannada: var(--font-kannada);
+  --font-roboto: var(--font-roboto);
+  --font-manrope: var(--font-manrope);
+  --font-inter: var(--font-inter);
+  --font-baloo-tamma-2: var(--font-baloo-tamma-2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-kannada), system-ui, Arial, sans-serif;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+/* ---------------------------
+   Font Size & Weight Utilities - Manrope, Inter & Baloo Tamma 2
+------------------------------ */
+
+/* 10px */
+.text-10-manrope-400 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-manrope-500 {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-manrope-600 {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-manrope-700 {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-manrope-800 {
+  font-size: 10px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-manrope-900 {
+  font-size: 10px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-10-inter-400 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-inter-500 {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-inter-600 {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-inter-700 {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-inter-800 {
+  font-size: 10px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-inter-900 {
+  font-size: 10px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-10-balootamma2-400 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-10-balootamma2-500 {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-10-balootamma2-600 {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-10-balootamma2-700 {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-10-balootamma2-800 {
+  font-size: 10px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-10-balootamma2-900 {
+  font-size: 10px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 11px */
+.text-11-manrope-400 {
+  font-size: 11px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-manrope-500 {
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-manrope-600 {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-manrope-700 {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-manrope-800 {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-manrope-900 {
+  font-size: 11px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-11-inter-400 {
+  font-size: 11px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-inter-500 {
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-inter-600 {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-inter-700 {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-inter-800 {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-inter-900 {
+  font-size: 11px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-11-balootamma2-400 {
+  font-size: 11px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-11-balootamma2-500 {
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-11-balootamma2-600 {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-11-balootamma2-700 {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-11-balootamma2-800 {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-11-balootamma2-900 {
+  font-size: 11px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 12px */
+.text-12-manrope-400 {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-manrope-500 {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-manrope-600 {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-manrope-700 {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-manrope-800 {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-manrope-900 {
+  font-size: 12px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-12-inter-400 {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-inter-500 {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-inter-600 {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-inter-700 {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-inter-800 {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-inter-900 {
+  font-size: 12px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-12-balootamma2-400 {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-balootamma2-500 {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-balootamma2-600 {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-balootamma2-700 {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-balootamma2-800 {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-balootamma2-900 {
+  font-size: 12px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-12-kannada-400 {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--font-kannada), system-ui, Arial, sans-serif;
+}
+
+/* 13px */
+.text-13-manrope-400 {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-manrope-500 {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-manrope-600 {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-manrope-700 {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-manrope-800 {
+  font-size: 13px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-manrope-900 {
+  font-size: 13px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-13-inter-400 {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-inter-500 {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-inter-600 {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-inter-700 {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-inter-800 {
+  font-size: 13px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-inter-900 {
+  font-size: 13px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-13-balootamma2-400 {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-13-balootamma2-500 {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-13-balootamma2-600 {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-13-balootamma2-700 {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-13-balootamma2-800 {
+  font-size: 13px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-13-balootamma2-900 {
+  font-size: 13px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 14px */
+.text-14-manrope-400 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-manrope-500 {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-manrope-600 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-manrope-700 {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-manrope-800 {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-manrope-900 {
+  font-size: 14px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-14-inter-400 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-inter-500 {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-inter-600 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-inter-700 {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-inter-800 {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-inter-900 {
+  font-size: 14px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-14-balootamma2-400 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-14-balootamma2-500 {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-14-balootamma2-600 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-14-balootamma2-700 {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-14-balootamma2-800 {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-14-balootamma2-900 {
+  font-size: 14px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 15px */
+.text-15-manrope-400 {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-manrope-500 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-manrope-600 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-manrope-700 {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-manrope-800 {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-manrope-900 {
+  font-size: 15px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-75-manrope-400 {
+  font-size: 15.75px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-75-manrope-700 {
+  font-size: 15.75px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-15-inter-400 {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-inter-500 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-inter-600 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-inter-700 {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-inter-800 {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-inter-900 {
+  font-size: 15px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-15-balootamma2-400 {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-15-balootamma2-500 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-15-balootamma2-600 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-15-balootamma2-700 {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-15-balootamma2-800 {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-15-balootamma2-900 {
+  font-size: 15px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 16px */
+.text-16-manrope-400 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-manrope-500 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-manrope-600 {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-manrope-700 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-manrope-800 {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-manrope-900 {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-16-inter-400 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-inter-500 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-inter-600 {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-inter-700 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-inter-800 {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-inter-900 {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-16-balootamma2-400 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-16-balootamma2-500 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-16-balootamma2-600 {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-16-balootamma2-700 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-16-balootamma2-800 {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-16-balootamma2-900 {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 18px */
+.text-18-manrope-400 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-17-manrope-700 {
+  font-size: 17px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-manrope-500 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-manrope-600 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-manrope-700 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-manrope-800 {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-manrope-900 {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-19-manrope-700 {
+  font-size: 19px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-21-manrope-700 {
+  font-size: 21px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-18-inter-400 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-inter-500 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-inter-600 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-inter-700 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-inter-800 {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-inter-900 {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-18-balootamma2-400 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-18-balootamma2-500 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-18-balootamma2-600 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-18-balootamma2-700 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-18-balootamma2-800 {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-18-balootamma2-900 {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 20px */
+.text-20-manrope-400 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-manrope-500 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-manrope-600 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-manrope-700 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-manrope-800 {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-manrope-900 {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-20-inter-400 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-inter-500 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-inter-600 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-inter-700 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-inter-800 {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-inter-900 {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-20-balootamma2-400 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-20-balootamma2-500 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-20-balootamma2-600 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-20-balootamma2-700 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-20-balootamma2-800 {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-20-balootamma2-900 {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 22px */
+.text-22-manrope-400 {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-manrope-500 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-manrope-600 {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-manrope-700 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-manrope-800 {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-manrope-900 {
+  font-size: 22px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-22-inter-400 {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-inter-500 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-inter-600 {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-inter-700 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-inter-800 {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-inter-900 {
+  font-size: 22px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-22-balootamma2-400 {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-22-balootamma2-500 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-22-balootamma2-600 {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-22-balootamma2-700 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-22-balootamma2-800 {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-22-balootamma2-900 {
+  font-size: 22px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 24px */
+.text-24-manrope-400 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-manrope-500 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-manrope-600 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-manrope-700 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-manrope-800 {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-manrope-900 {
+  font-size: 24px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-24-inter-400 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-inter-500 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-inter-600 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-inter-700 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-inter-800 {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-inter-900 {
+  font-size: 24px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-24-balootamma2-400 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-24-balootamma2-500 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-24-balootamma2-600 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-24-balootamma2-700 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-24-balootamma2-800 {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-24-balootamma2-900 {
+  font-size: 24px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+/* 32px */
+.text-32-manrope-400 {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-manrope-500 {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-manrope-600 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-manrope-700 {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-manrope-800 {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-manrope-900 {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-32-inter-400 {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-inter-500 {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-inter-600 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-inter-700 {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-inter-800 {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-inter-900 {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.text-32-balootamma2-400 {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-32-balootamma2-500 {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-32-balootamma2-600 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-32-balootamma2-700 {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-32-balootamma2-800 {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-32-balootamma2-900 {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+}
+
+.text-25-manrope-700 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-27-manrope-700 {
+  font-size: 27px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-29-manrope-400 {
+  font-size: 29px;
+  font-weight: 400;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-30-manrope-700 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+.text-35-kannada-900 {
+  font-size: 35px;
+  font-weight: 900;
+  font-family: var(--font-kannada), system-ui, Arial, sans-serif;
+}
+
+@media (min-width: 375px) {
+  .min-375\:text-17-manrope-700 {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+}
+
+@media (min-width: 480px) {
+  .min-480\:text-13-manrope-700 {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .min-480\:text-15-manrope-400 {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .min-480\:text-19-manrope-700 {
+    font-size: 19px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .min-480\:text-21-manrope-700 {
+    font-size: 21px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .min-480\:text-22-manrope-700 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .min-480\:text-22-balootamma2-700 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .min-480\:leading-124 {
+    line-height: 124%;
+  }
+
+  .min-480\:leading-150 {
+    line-height: 150%;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:text-21-manrope-700 {
+    font-size: 21px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .sm\:text-25-manrope-700 {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .sm\:text-30-manrope-700 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .sm\:leading-126 {
+    line-height: 126%;
+  }
+
+  .sm\:leading-138 {
+    line-height: 138%;
+  }
+
+  .sm\:leading-155 {
+    line-height: 155%;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-15-75-manrope-400 {
+    font-size: 15.75px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:leading-165 {
+    line-height: 165%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* 10px */
+  .md\:text-10-manrope-400 {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-manrope-500 {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-manrope-600 {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-manrope-700 {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-manrope-800 {
+    font-size: 10px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-manrope-900 {
+    font-size: 10px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-10-inter-400 {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-inter-500 {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-inter-600 {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-inter-700 {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-inter-800 {
+    font-size: 10px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-inter-900 {
+    font-size: 10px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-10-balootamma2-400 {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-10-balootamma2-500 {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-10-balootamma2-600 {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-10-balootamma2-700 {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-10-balootamma2-800 {
+    font-size: 10px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-10-balootamma2-900 {
+    font-size: 10px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 11px */
+  .md\:text-11-manrope-400 {
+    font-size: 11px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-manrope-500 {
+    font-size: 11px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-manrope-600 {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-manrope-700 {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-manrope-800 {
+    font-size: 11px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-manrope-900 {
+    font-size: 11px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-11-inter-400 {
+    font-size: 11px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-inter-500 {
+    font-size: 11px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-inter-600 {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-inter-700 {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-inter-800 {
+    font-size: 11px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-inter-900 {
+    font-size: 11px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-11-balootamma2-400 {
+    font-size: 11px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-11-balootamma2-500 {
+    font-size: 11px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-11-balootamma2-600 {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-11-balootamma2-700 {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-11-balootamma2-800 {
+    font-size: 11px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-11-balootamma2-900 {
+    font-size: 11px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 12px */
+  .md\:text-12-manrope-400 {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-manrope-500 {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-manrope-600 {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-manrope-700 {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-manrope-800 {
+    font-size: 12px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-manrope-900 {
+    font-size: 12px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-12-inter-400 {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-inter-500 {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-inter-600 {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-inter-700 {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-inter-800 {
+    font-size: 12px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-inter-900 {
+    font-size: 12px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-12-balootamma2-400 {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-12-balootamma2-500 {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-12-balootamma2-600 {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-12-balootamma2-700 {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-12-balootamma2-800 {
+    font-size: 12px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-12-balootamma2-900 {
+    font-size: 12px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 13px */
+  .md\:text-13-manrope-400 {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-manrope-500 {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-manrope-600 {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-manrope-700 {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-manrope-800 {
+    font-size: 13px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-manrope-900 {
+    font-size: 13px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-13-inter-400 {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-inter-500 {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-inter-600 {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-inter-700 {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-inter-800 {
+    font-size: 13px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-inter-900 {
+    font-size: 13px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-13-balootamma2-400 {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-13-balootamma2-500 {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-13-balootamma2-600 {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-13-balootamma2-700 {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-13-balootamma2-800 {
+    font-size: 13px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-13-balootamma2-900 {
+    font-size: 13px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 14px */
+  .md\:text-14-manrope-400 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-manrope-500 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-manrope-600 {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-manrope-700 {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-manrope-800 {
+    font-size: 14px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-manrope-900 {
+    font-size: 14px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-14-inter-400 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-inter-500 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-inter-600 {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-inter-700 {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-inter-800 {
+    font-size: 14px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-inter-900 {
+    font-size: 14px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-14-balootamma2-400 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-14-balootamma2-500 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-14-balootamma2-600 {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-14-balootamma2-700 {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-14-balootamma2-800 {
+    font-size: 14px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-14-balootamma2-900 {
+    font-size: 14px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 16px */
+  .md\:text-16-manrope-400 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-manrope-500 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-manrope-600 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-manrope-700 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-manrope-800 {
+    font-size: 16px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-manrope-900 {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-16-inter-400 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-inter-500 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-inter-600 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-inter-700 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-inter-800 {
+    font-size: 16px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-inter-900 {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-16-balootamma2-400 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-16-balootamma2-500 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-16-balootamma2-600 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-16-balootamma2-700 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-16-balootamma2-800 {
+    font-size: 16px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-16-balootamma2-900 {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 18px */
+  .md\:text-18-manrope-400 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-manrope-500 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-manrope-600 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-manrope-700 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-manrope-800 {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-manrope-900 {
+    font-size: 18px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-18-inter-400 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-inter-500 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-inter-600 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-inter-700 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-inter-800 {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-inter-900 {
+    font-size: 18px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-18-balootamma2-400 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-18-balootamma2-500 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-18-balootamma2-600 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-18-balootamma2-700 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-18-balootamma2-800 {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-18-balootamma2-900 {
+    font-size: 18px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 20px */
+  .md\:text-20-manrope-400 {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-manrope-500 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-manrope-600 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-manrope-700 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-manrope-800 {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-manrope-900 {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-20-inter-400 {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-inter-500 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-inter-600 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-inter-700 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-inter-800 {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-inter-900 {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-20-balootamma2-400 {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-20-balootamma2-500 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-20-balootamma2-600 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-20-balootamma2-700 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-20-balootamma2-800 {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-20-balootamma2-900 {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 22px */
+  .md\:text-22-manrope-400 {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-manrope-500 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-manrope-600 {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-manrope-700 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-manrope-800 {
+    font-size: 22px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-manrope-900 {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-22-inter-400 {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-inter-500 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-inter-600 {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-inter-700 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-inter-800 {
+    font-size: 22px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-inter-900 {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-22-balootamma2-400 {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-22-balootamma2-500 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-22-balootamma2-600 {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-22-balootamma2-700 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-22-balootamma2-800 {
+    font-size: 22px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-22-balootamma2-900 {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 24px */
+  .md\:text-24-manrope-400 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-manrope-500 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-manrope-600 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-manrope-700 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-manrope-800 {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-manrope-900 {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-24-inter-400 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-inter-500 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-inter-600 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-inter-700 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-inter-800 {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-inter-900 {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-24-balootamma2-400 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-24-balootamma2-500 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-24-balootamma2-600 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-24-balootamma2-700 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-24-balootamma2-800 {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-24-balootamma2-900 {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  /* 32px */
+  .md\:text-32-manrope-400 {
+    font-size: 32px;
+    font-weight: 400;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-manrope-500 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-manrope-600 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-manrope-700 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-manrope-800 {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-manrope-900 {
+    font-size: 32px;
+    font-weight: 900;
+    font-family: var(--font-manrope), "Manrope", sans-serif;
+  }
+
+  .md\:text-32-inter-400 {
+    font-size: 32px;
+    font-weight: 400;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-inter-500 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-inter-600 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-inter-700 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-inter-800 {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-inter-900 {
+    font-size: 32px;
+    font-weight: 900;
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .md\:text-32-balootamma2-400 {
+    font-size: 32px;
+    font-weight: 400;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-32-balootamma2-500 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-32-balootamma2-600 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-32-balootamma2-700 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-32-balootamma2-800 {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+
+  .md\:text-32-balootamma2-900 {
+    font-size: 32px;
+    font-weight: 900;
+    font-family: var(--font-baloo-tamma-2), "Baloo Tamma 2", cursive;
+  }
+}
+
+/* LINE HEIGHT UTILITIES */
+.leading-100 {
+  line-height: 100%;
+}
+
+.leading-106 {
+  line-height: 106%;
+}
+
+.leading-110 {
+  line-height: 110%;
+}
+
+.leading-119 {
+  line-height: 119%;
+}
+
+.leading-120 {
+  line-height: 120%;
+}
+
+.leading-122 {
+  line-height: 122%;
+}
+
+.leading-124 {
+  line-height: 124%;
+}
+
+.leading-126 {
+  line-height: 126%;
+}
+
+.leading-128 {
+  line-height: 128%;
+}
+
+.leading-130 {
+  line-height: 130%;
+}
+
+.leading-135 {
+  line-height: 135%;
+}
+
+.leading-138 {
+  line-height: 138%;
+}
+
+.leading-140 {
+  line-height: 140%;
+}
+
+.leading-145 {
+  line-height: 145%;
+}
+
+.leading-150 {
+  line-height: 150%;
+}
+
+.leading-155 {
+  line-height: 155%;
+}
+
+.leading-165 {
+  line-height: 165%;
+}
+
+/* COLOR UTILITIES */
+/* TEXT */
+.text-000000 {
+  color: var(--color-000000);
+}
+
+.text-009EF9 {
+  color: var(--color-009EF9);
+}
+
+.text-111111 {
+  color: var(--color-111111);
+}
+
+.text-1E1E1E {
+  color: var(--color-1E1E1E);
+}
+
+.text-276AAA {
+  color: var(--color-276AAA);
+}
+
+.text-3046EB {
+  color: var(--color-3046EB);
+}
+
+.text-333333 {
+  color: var(--color-333333);
+}
+
+.text-3742B8 {
+  color: var(--color-3742B8) !important;
+}
+
+.text-4A4A4A {
+  color: var(--color-4A4A4A);
+}
+
+.text-4F4F4F {
+  color: var(--color-4F4F4F);
+}
+
+.text-6D6D6D {
+  color: var(--color-6D6D6D);
+}
+
+.text-6F6F6F {
+  color: var(--color-6F6F6F);
+}
+
+.text-757575 {
+  color: var(--color-757575);
+}
+
+.text-808080 {
+  color: var(--color-808080);
+}
+
+.text-8B95A5 {
+  color: var(--color-8B95A5);
+}
+
+.text-D1D1D1 {
+  color: var(--color-D1D1D1);
+}
+
+.text-D2D2D2 {
+  color: var(--color-D2D2D2);
+}
+
+.text-DFDFDF {
+  color: var(--color-DFDFDF);
+}
+
+.text-E8E8E8 {
+  color: var(--color-E8E8E8);
+}
+
+.text-F4F1F6 {
+  color: var(--color-F4F1F6);
+}
+
+.text-F7F1DE {
+  color: var(--color-F7F1DE);
+}
+
+.text-F9F9F9 {
+  color: var(--color-F9F9F9);
+}
+
+.text-panel {
+  color: var(--color-panel);
+}
+
+.text-FCF8F8 {
+  color: var(--color-FCF8F8);
+}
+
+.text-FFF6DE {
+  color: var(--color-FFF6DE);
+}
+
+.text-FBEFEF {
+  color: var(--color-FBEFEF);
+}
+
+.text-F2F7FF {
+  color: var(--color-F2F7FF);
+}
+
+.text-FACC15 {
+  color: var(--color-FACC15);
+}
+
+.text-FFFFFF {
+  color: var(--color-on-accent);
+}
+
+.text-0D156C {
+  color: var(--color-0D156C);
+}
+
+.text-183354 {
+  color: var(--color-183354);
+}
+
+/* BACKGROUND */
+.bg-000000 {
+  background-color: var(--color-000000);
+}
+
+.bg-009EF9 {
+  background-color: var(--color-009EF9);
+}
+
+.bg-111111 {
+  background-color: var(--color-111111);
+}
+
+.bg-1E1E1E {
+  background-color: var(--color-1E1E1E);
+}
+
+.bg-276AAA {
+  background-color: var(--color-276AAA);
+}
+
+.bg-3046EB {
+  background-color: var(--color-3046EB);
+}
+
+.bg-333333 {
+  background-color: var(--color-333333);
+}
+
+.bg-3742B8 {
+  background-color: var(--color-3742B8);
+}
+
+.bg-4A4A4A {
+  background-color: var(--color-4A4A4A);
+}
+
+.bg-4F4F4F {
+  background-color: var(--color-4F4F4F);
+}
+
+.bg-6D6D6D {
+  background-color: var(--color-6D6D6D);
+}
+
+.bg-6F6F6F {
+  background-color: var(--color-6F6F6F);
+}
+
+.bg-757575 {
+  background-color: var(--color-757575);
+}
+
+.bg-808080 {
+  background-color: var(--color-808080);
+}
+
+.bg-8B95A5 {
+  background-color: var(--color-8B95A5);
+}
+
+.bg-D1D1D1 {
+  background-color: var(--color-D1D1D1);
+}
+
+.bg-D2D2D2 {
+  background-color: var(--color-D2D2D2);
+}
+
+.bg-DFDFDF {
+  background-color: var(--color-DFDFDF);
+}
+
+.bg-E8E8E8 {
+  background-color: var(--color-E8E8E8);
+}
+
+.bg-F3F4F6 {
+  background-color: var(--color-F3F4F6);
+}
+
+.bg-F4F1F6 {
+  background-color: var(--color-F4F1F6);
+}
+
+.bg-F7F1DE {
+  background-color: var(--color-F7F1DE);
+}
+
+.bg-F9F9F9 {
+  background-color: var(--color-F9F9F9);
+}
+
+.bg-panel {
+  background-color: var(--color-panel);
+}
+
+.bg-FCF8F8 {
+  background-color: var(--color-FCF8F8);
+}
+
+.bg-FFF6DE {
+  background-color: var(--color-FFF6DE);
+}
+
+.bg-FBEFEF {
+  background-color: var(--color-FBEFEF);
+}
+
+.bg-F2F7FF {
+  background-color: var(--color-F2F7FF);
+}
+
+.bg-FACC15 {
+  background-color: var(--color-FACC15);
+}
+
+.bg-FFFFFF {
+  background-color: var(--color-FFFFFF);
+}
+
+.bg-0D156C {
+  background-color: var(--color-0D156C);
+}
+
+.bg-183354 {
+  background-color: var(--color-183354);
+}
+
+/* BORDER */
+.border-000000 {
+  border-color: var(--color-000000);
+}
+
+.border-009EF9 {
+  border-color: var(--color-009EF9);
+}
+
+.border-111111 {
+  border-color: var(--color-111111);
+}
+
+.border-1E1E1E {
+  border-color: var(--color-1E1E1E);
+}
+
+.border-276AAA {
+  border-color: var(--color-276AAA);
+}
+
+.border-3046EB {
+  border-color: var(--color-3046EB);
+}
+
+.border-333333 {
+  border-color: var(--color-333333);
+}
+
+.border-3742B8 {
+  border-color: var(--color-3742B8);
+}
+
+.border-4A4A4A {
+  border-color: var(--color-4A4A4A);
+}
+
+.border-4F4F4F {
+  border-color: var(--color-4F4F4F);
+}
+
+.border-6D6D6D {
+  border-color: var(--color-6D6D6D);
+}
+
+.border-6F6F6F {
+  border-color: var(--color-6F6F6F);
+}
+
+.border-757575 {
+  border-color: var(--color-757575);
+}
+
+.border-808080 {
+  border-color: var(--color-808080);
+}
+
+.border-8B95A5 {
+  border-color: var(--color-8B95A5);
+}
+
+.border-D1D1D1 {
+  border-color: var(--color-D1D1D1);
+}
+
+.border-D2D2D2 {
+  border-color: var(--color-D2D2D2);
+}
+
+.border-DFDFDF {
+  border-color: var(--color-DFDFDF);
+}
+
+.border-E8E8E8 {
+  border-color: var(--color-E8E8E8);
+}
+
+.border-F4F1F6 {
+  border-color: var(--color-F4F1F6);
+}
+
+.border-F7F1DE {
+  border-color: var(--color-F7F1DE);
+}
+
+.border-F9F9F9 {
+  border-color: var(--color-F9F9F9);
+}
+
+.border-panel {
+  border-color: var(--color-panel);
+}
+
+.border-FCF8F8 {
+  border-color: var(--color-FCF8F8);
+}
+
+.border-FFF6DE {
+  border-color: var(--color-FFF6DE);
+}
+
+.border-FBEFEF {
+  border-color: var(--color-FBEFEF);
+}
+
+.border-F2F7FF {
+  border-color: var(--color-F2F7FF);
+}
+
+.border-FACC15 {
+  border-color: var(--color-FACC15);
+}
+
+.border-FFFFFF {
+  border-color: var(--color-border-inverse);
+}
+
+.border-0D156C {
+  border-color: var(--color-0D156C);
+}
+
+.border-183354 {
+  border-color: var(--color-183354);
+}
+
+/* ============================================================================
+ * ARTICLE EDITORIAL TEXT FORMATS (ported from dinamani, Kannada Prabha palette)
+ * Applied to any rich-text HTML rendered from Quintype story-elements via the
+ * `article-links` class. Uses the site accent #009EF9. !important overrides the
+ * Tailwind v4 preflight reset so editorial <ul>/<ol>/<h*>/<a> keep semantics.
+ * ==========================================================================*/
+.article-links a {
+  color: #009ef9 !important;
+  text-decoration: underline !important;
+}
+.article-links a:hover {
+  color: var(--color-0D156C) !important;
+}
+.article-links ins a {
+  color: #009ef9 !important;
+  text-decoration: underline !important;
+}
+.article-links ins a:hover {
+  color: var(--color-0D156C) !important;
+}
+.article-links ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+.article-links ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+.article-links li {
+  display: list-item !important;
+  list-style: inherit !important;
+  margin-bottom: 0.5rem !important;
+}
+.article-links p {
+  margin-bottom: 1rem !important;
+}
+.article-links h1 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1.5rem 0 1rem !important;
+}
+.article-links h2 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1.5rem 0 1rem !important;
+}
+.article-links h3 {
+  font-size: 1.375rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1.25rem 0 0.75rem !important;
+}
+.article-links h4 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1rem 0 0.75rem !important;
+}
+.article-links h5 {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1rem 0 0.5rem !important;
+}
+.article-links h6 {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-1E1E1E) !important;
+  margin: 1rem 0 0.5rem !important;
+}
+
+/* Quote / blockquote decorative marks */
+.quote-marks blockquote::before {
+  content: "\201C";
+  color: #009ef9;
+  margin-right: 2px;
+}
+.quote-marks blockquote::after {
+  content: "\201D";
+  color: #009ef9;
+  margin-left: 2px;
+}
+.blockquote-marks blockquote::before {
+  content: "\201C\201C";
+  color: #009ef9;
+  margin-right: 2px;
+}
+.blockquote-marks blockquote::after {
+  content: "\201D\201D";
+  color: #009ef9;
+  margin-left: 2px;
+}
+
+/* Live-blog pulsing dot */
+@keyframes wave {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes liveDotBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.9); }
+}
+.live-dot {
+  animation: liveDotBlink 1s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  will-change: transform, opacity;
+}
+
+/* Static / custom-URL page wrapper — establishes a containing block + stacking
+   context so a `position:fixed` element in the CMS content (page loaders,
+   overlays) stays WITHIN the content area instead of covering the site header/
+   footer. */
+.static-page-wrap {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+.static-page-wrap img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Breaking-news ticker — seamless horizontal marquee. The track holds TWO copies
+   of the items and slides left by exactly half its width, so it loops without a
+   visible seam. Pauses on hover. Respects reduced-motion. */
+@keyframes breakingMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.breaking-marquee {
+  animation: breakingMarquee var(--marquee-duration, 40s) linear infinite;
+}
+.breaking-ticker:hover .breaking-marquee {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .breaking-marquee { animation: none; }
+}

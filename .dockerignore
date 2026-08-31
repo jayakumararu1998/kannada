@@ -1,0 +1,22 @@
+# Deps and build output come from the deps/builder stages, never the host.
+# Copying them in overwrites the clean `npm ci` tree and adds ~1.5GB per layer.
+node_modules
+.next
+out
+build
+coverage
+
+# Editor / OS noise
+.DS_Store
+.vscode
+.idea
+*.log
+*.tsbuildinfo
+
+# Stray screenshots at repo root
+kp-*.png
+
+# NOTE: .env.local is deliberately NOT ignored. The runner stage copies it out of
+# the builder so the standalone server has its runtime vars. Adding `.env*.local`
+# here silently breaks every server-side API URL in the container.
+.env.example
